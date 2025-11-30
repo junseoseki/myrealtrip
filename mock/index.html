@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyRealTrip - Mock for QA Portfolio</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background: #f8f9fa; }
+    h1 { color: #00c4b4; }
+    input[type="text"] { padding: 15px; width: 400px; font-size: 18px; }
+    button { padding: 15px 30px; background: #00c4b4; color: white; border: none; font-size: 18px; cursor: pointer; }
+    .search-results { margin-top: 40px; }
+    .product { padding: 20px; background: white; margin: 10px 0; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>MyRealTrip Mock Page</h1>
+  <p>QA 자동화 포트폴리오용 모킹 페이지입니다.</p>
+  
+  <input type="text" placeholder="여행지, 상품명" id="search-input" />
+  <button onclick="search()">검색</button>
+
+  <div class="search-results" id="results" style="display:none;">
+    <h2>검색 결과</h2>
+    <div class="product">제주도 2박 3일 투어 - 198,000원</div>
+    <div class="product">제주 올인클루시브 - 298,000원</div>
+    <a href="/product/12345">제주 프리미엄 투어 상세보기 →</a>
+  </div>
+
+  <script>
+    function search() {
+      document.getElementById("results").style.display = "block";
+    }
+  </script>
+  <script>
+  // Playwright가 페이지 로딩 완료했다고 확실히 알게 해주는 신호
+  window.addEventListener("load", () => {
+    document.body.setAttribute("data-loaded", "true");
+  });
+  </script>
+</body>
+</html>
